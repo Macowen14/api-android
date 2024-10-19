@@ -2,6 +2,7 @@ import 'package:apiandroid/models/weathermodel.dart';
 import 'package:apiandroid/services/weatherservice.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:lottie/lottie.dart';
 
 class WeatherScreen extends StatefulWidget {
   const WeatherScreen({super.key});
@@ -96,7 +97,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                              Padding(
                         padding: const EdgeInsets.only(left: 20, top: 10),
                         child: Text(
-                          "${_weather?.temperature}°C",
+                          "${_weather?.temperature.round()}°C",
                           style: const TextStyle(
                               color: Colors.black,
                               fontSize: 23,
@@ -111,7 +112,12 @@ class _WeatherScreenState extends State<WeatherScreen> {
                               fontSize: 14,
                               color: Color.fromARGB(255, 89, 87, 87)),
                         ),
-                      )
+                      ),
+                       ClipRect(
+                        child: Lottie.asset(
+                            getWeatherAnimation(_weather?.mainCondition),
+                            height: height * 0.20),
+                      ),
                     ],
                   ),
                 )
