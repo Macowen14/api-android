@@ -72,9 +72,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
             height: height * 0.20,
             width: double.infinity,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(16),
-              color: Colors.white
-            ),
+                borderRadius: BorderRadius.circular(16), color: Colors.white),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -88,13 +86,12 @@ class _WeatherScreenState extends State<WeatherScreen> {
                           _weather?.cityName ?? "Loading city...",
                           textAlign: TextAlign.left,
                           style: const TextStyle(
-                            color: Colors.green,
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold
-                          ),
+                              color: Colors.green,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold),
                         ),
-                        ),
-                             Padding(
+                      ),
+                      Padding(
                         padding: const EdgeInsets.only(left: 20, top: 10),
                         child: Text(
                           "${_weather?.temperature.round()}°C",
@@ -113,7 +110,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                               color: Color.fromARGB(255, 89, 87, 87)),
                         ),
                       ),
-                       ClipRect(
+                      ClipRect(
                         child: Lottie.asset(
                             getWeatherAnimation(_weather?.mainCondition),
                             height: height * 0.20),
